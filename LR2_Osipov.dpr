@@ -4,11 +4,8 @@ program LR2_Osipov;
 
 uses
   SysUtils;
-
-const
-Z = 30000000;
 type
-mas = array[1..Z] of longint;
+mas = array of longint;
 var
 TD:TdateTime;
 myHour, myMin, mySec, mymilli:word ;
@@ -167,6 +164,7 @@ end
 else
 if log='p' then
 begin
+setlength(a,n+1);
 for I := 0 to n - 1 do
 a[i+1]:=w[i];
 TD:=Now;
